@@ -58,6 +58,13 @@ db.potions.update(
     { "name": "Invisibility"},
     { $pull: {categories: "nuevo"}} /*quita cualquiera instancia de un valor del array*/
     )
+/*uses the $unset operator to remove the fields quantity and instock from the first document
+in the products collection where the field sku has a value of unknown*/
+db.products.update(
+   { sku: "unknown" },
+   { $unset: { quantity: "", instock: "" } }
+)
+
 
     /*desafios*/
     /*Add the update parameter that will remove the smell field from all documents.*/
