@@ -14,6 +14,7 @@ cat /var/log/mongodb/mongod.log
 
 ##para iniciar mongo shell
 mongo
+mongo --host mongodb0.example.com:28015
 
 ##para obtener ayuda en el shell
 help
